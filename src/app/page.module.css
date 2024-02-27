@@ -105,19 +105,20 @@
 
   .tipPerson div,
   .TotalPerson div {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--Strong-cyan);
   }
 
   .divTwo button {
     padding: 0.5rem;
-    background-color: var(--Dark-grayish-cyan);
+    background-color: var(--Light-grayish-cyan);
     border: none;
     color: var(--Very-dark-cyan);
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
     border-radius: 5px;
+    cursor: pointer;
   }
 }
 
@@ -219,7 +220,7 @@
 
   .divTwo button {
     padding: 0.5rem;
-    background-color: var(--Dark-grayish-cyan);
+    background-color: var(--Light-grayish-cyan);
     border: none;
     color: var(--Very-dark-cyan);
     text-transform: uppercase;

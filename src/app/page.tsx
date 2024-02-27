@@ -1,28 +1,28 @@
 "use client";
-
 import React, { ChangeEvent, useState } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { IoPerson } from "react-icons/io5";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const [bill, setBill] = useState<number>();
-  const [numberOfPerson, setNumberOfPerson] = useState<number>();
-  const [tip, setTip] = useState<number>(0);
+  const [bill, setBill] = useState<number>(0);
+  const [numberOfPerson, setNumberOfPerson] = useState<number>(0.0);
+  const [tip, setTip] = useState<number>(0.0);
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
   }
   function handleChangeBill(event: ChangeEvent<HTMLInputElement>) {
-    setBill(parseInt(event.target.value));
+    setBill(parseFloat(event.target.value));
   }
   function handleCustomePercentage(event: ChangeEvent<HTMLInputElement>) {
-    setTip(parseInt(event.target.value));
+    setTip(parseFloat(event.target.value));
   }
   function handleChangePersone(event: ChangeEvent<HTMLInputElement>) {
-    setNumberOfPerson(parseInt(event.target.value));
+    setNumberOfPerson(parseFloat(event.target.value));
   }
   function handlePercentage(event: React.MouseEvent<HTMLButtonElement>) {
-    setTip(parseInt(event.currentTarget.value));
+    setTip(parseFloat(event.currentTarget.value));
   }
   return (
     <main className={styles.commonProperty}>
@@ -47,7 +47,7 @@ export default function Home() {
               <BsCurrencyDollar className={styles.dollar} />
               <input
                 type="text"
-                value={bill}
+                value={bill ? bill : "0"}
                 onChange={handleChangeBill}
                 placeholder="0"
               />
@@ -81,12 +81,28 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.billSection}>
-            <label htmlFor="">Number of people</label>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <label htmlFor="">Number of people</label>
+              {!numberOfPerson ? (
+                <span style={{ color: "red", fontSize: ".6rem" }}>
+                  Can not be zero
+                </span>
+              ) : (
+                ""
+              )}
+            </div>
             <div style={{ position: "relative" }}>
               <IoPerson className={styles.dollar} />
               <input
                 type="text"
-                value={numberOfPerson}
+                value={numberOfPerson ? numberOfPerson : "0"}
                 onChange={handleChangePersone}
                 placeholder="0"
               />
@@ -101,17 +117,31 @@ export default function Home() {
                 Tip Amount <br />
                 <span>/person</span>
               </h3>
-              <div>$0.00</div>
+              <div>${bill & tip ? bill + (bill / 100) * tip : "0.00"}</div>
             </div>
             <div className={styles.TotalPerson}>
               <h3>
                 Total <br />
                 <span>/person</span>
               </h3>
-              <div>$0.00</div>
+              <div>
+                $
+                {numberOfPerson
+                  ? parseFloat((bill + (bill / 100) * tip).toFixed(2)) /
+                    numberOfPerson
+                  : "0.00"}
+              </div>
             </div>
           </div>
-          <button>Reset</button>
+          <button
+            onClick={() => {
+              setBill(0);
+              setNumberOfPerson(0);
+              setTip(0);
+            }}
+          >
+            Reset
+          </button>
         </div>
       </form>
     </main>
