@@ -67,8 +67,12 @@
     border-radius: 5px;
     padding: 0.6rem 0.5rem;
     text-align: center;
+    outline: none;
   }
-
+  .parcentage input {
+    color: var(--Very-dark-cyan);
+    background-color: var(--White);
+  }
   .divTwo {
     width: 300px;
     display: flex;
