@@ -1,0 +1,226 @@
+.commonProperty {
+  color: var(--Dark-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+@media screen and (width>=700px) {
+  .form {
+    background-color: var(--Very-light-grayish-cyan);
+    border-radius: 10px;
+    padding: 1.7rem;
+    margin-top: 2rem;
+    display: flex;
+    width: 600px;
+    gap: 2.2rem;
+  }
+
+  .divOne {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .billSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 90%;
+  }
+
+  .billSection input {
+    border: none;
+    background: var(--Very-light-grayish-cyan);
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--Grayish-cyan);
+    outline: none;
+  }
+
+  .dollar {
+    position: absolute;
+    inset: 0;
+    left: -15rem;
+    margin: auto;
+    fill: var(--Grayish-cyan);
+  }
+
+  .parcentage {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .parcentage button,
+  .parcentage input {
+    color: var(--Very-light-grayish-cyan);
+    font-weight: 800;
+    background-color: var(--Very-dark-cyan);
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+  }
+
+  .divTwo {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    background-color: var(--Very-dark-cyan);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .divTwo h3 {
+    color: var(--White);
+    font-size: 1rem;
+  }
+
+  .divTwo h3 span {
+    color: var(--Grayish-cyan);
+    font-size: 0.8rem;
+  }
+
+  .tipPerson,
+  .TotalPerson {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tipPerson div,
+  .TotalPerson div {
+    font-size: 1.8rem;
+    color: var(--Strong-cyan);
+  }
+
+  .divTwo button {
+    padding: 0.5rem;
+    background-color: var(--Dark-grayish-cyan);
+    border: none;
+    color: var(--Very-dark-cyan);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (width<700px) {
+  .form {
+    background-color: var(--Very-light-grayish-cyan);
+    border-radius: 10px;
+    padding: 1.7rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 1rem;
+  }
+  .divOne {
+    width: 300px;
+  }
+  .billSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 90%;
+  }
+
+  .billSection input {
+    border: none;
+    background: var(--Very-light-grayish-cyan);
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--Grayish-cyan);
+    outline: none;
+  }
+
+  .dollar {
+    position: absolute;
+    inset: 0;
+    left: -15rem;
+    margin: auto;
+    fill: var(--Grayish-cyan);
+  }
+
+  .parcentage {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .parcentage button,
+  .parcentage input {
+    color: var(--Very-light-grayish-cyan);
+    font-weight: 800;
+    background-color: var(--Very-dark-cyan);
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  .parcentage input {
+    color: var(--Very-dark-cyan);
+    background-color: var(--White);
+    outline: none;
+  }
+  .divTwo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    background-color: var(--Very-dark-cyan);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+  .divTwo h3 {
+    color: var(--White);
+    font-size: 1rem;
+  }
+
+  .divTwo h3 span {
+    color: var(--Grayish-cyan);
+    font-size: 0.8rem;
+  }
+
+  .tipPerson,
+  .TotalPerson {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tipPerson div,
+  .TotalPerson div {
+    font-size: 1.8rem;
+    color: var(--Strong-cyan);
+  }
+
+  .divTwo button {
+    padding: 0.5rem;
+    background-color: var(--Dark-grayish-cyan);
+    border: none;
+    color: var(--Very-dark-cyan);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
